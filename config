@@ -220,6 +220,11 @@ input "type:keyboard" {
     xkb_options "caps:ctrl_modifier"
 }
 
+
+# Removing titlebar
+default_border none
+default_floating_border none
+
 #
 # Status Bar:
 #
