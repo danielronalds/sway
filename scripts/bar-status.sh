@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
 
-RED='\033[0;31m'
-NC='\033[0m' # No Color
-
-red() {
-    printf "${RED}$@${NC}\n"
-}
-
 update_brightness() {
     local current_brightness=$(brightnessctl g)
     local max_brightness=$(brightnessctl m)
