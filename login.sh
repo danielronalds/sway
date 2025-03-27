@@ -10,6 +10,7 @@ fix-app-startup() {
 
 main() {
     prep-ghostty
+    fix-app-startup
 }
 
 main "$@"
