@@ -100,6 +100,8 @@ bindsym $mod+Shift+Right move right
 # Resize Actions #
 ##################
 
+bindsym $mod+r mode "resize"
+
 mode "resize" {
     # Window Reszing
     bindsym $left resize shrink width 10px
@@ -114,7 +116,6 @@ mode "resize" {
     # Mode Selection
     bindsym Return mode "default"
     bindsym Escape mode "default"
-    bindsym $mod+r mode "resize"
 }
 
 ##################
