@@ -11,3 +11,4 @@ set $right l
 set $term ghostty
 set $menu wmenu-run
 set $browser firefox
+set $uni_browser firefox -P Waikato
