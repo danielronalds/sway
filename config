@@ -17,6 +17,7 @@ set $right l
 set $term ghostty
 # Your preferred application launcher
 set $menu wmenu-run
+set $browser firefox
 
 ### Output configuration
 #
@@ -69,6 +70,8 @@ output eDP-1 {
 
     # Kill focused window
     bindsym $mod+Shift+q kill
+
+    bindsym $mod+Shift+Return exec $browser
 
     # Start your launcher
     bindsym $mod+p exec $menu
@@ -242,5 +245,13 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+
+# TODO: Potentially a way to split up the config? https://www.reddit.com/r/swaywm/comments/ku6fmi/sway_startup_applications/
+
+# Run startupscript
+exec_always bash -c "$HOME/.config/sway/login.sh" 
+
+# Fixing slow app startup
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 include @sysconfdir@/sway/config.d/*
