@@ -139,13 +139,15 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Open a Application Launcher
 bindsym $mod+p exec $menu
 
-# Open terminal
+# Open Terminal
 bindsym $mod+Return exec $term
 
 # Open Browser
 bindsym $mod+Shift+Return exec $browser
 bindsym $mod+Ctrl+Shift+Return exec $uni_browser
 
+# Open Filebrowser
+bindsym $mod+Shift+f exec $filebrowser
 
 # Open VS Code
 bindsym $mod+Shift+v exec code
