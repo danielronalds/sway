@@ -9,7 +9,7 @@ update_brightness() {
 }
 
 update_time() {
-    TIME=$(date +'%Y-%m-%d %H:%M')
+    TIME=$(date +'%a %b %d %l:%M %p')
 }
 
 update_volume() {
