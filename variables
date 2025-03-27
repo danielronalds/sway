@@ -1,0 +1,13 @@
+# Setting mod to Windows Key
+set $mod Mod4
+
+# Setting vim bindings
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Setting applications
+set $term ghostty
+set $menu wmenu-run
+set $browser firefox
