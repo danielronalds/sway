@@ -1,0 +1,2 @@
+# Run startupscript
+exec bash -c "$HOME/.config/sway/scripts/login.sh" 

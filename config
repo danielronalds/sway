@@ -1,9 +1,9 @@
 # Variables have to be included first so that they can be used in the rest of the config
-include "./variables"
+include "./configs/variables"
 
-include "./binds"
-include "./inputs"
-include "./appearance"
-include "./startup"
+include "./configs/binds"
+include "./configs/inputs"
+include "./configs/appearance"
+include "./configs/startup"
 
 include @sysconfdir@/sway/config.d/*

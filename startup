@@ -1,4 +1,0 @@
-# Run startupscript
-exec bash -c "$HOME/.config/sway/login.sh" 
-
-# Fixing slow app startup

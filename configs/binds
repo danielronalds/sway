@@ -132,3 +132,6 @@ bindsym $mod+Return exec $term
 
 # Open Browser
 bindsym $mod+Shift+Return exec $browser
+
+# Open VS Code
+bindsym $mod+Shift+v exec code
