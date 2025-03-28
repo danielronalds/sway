@@ -8,9 +8,14 @@ fix-app-startup() {
     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 }
 
+run-nm-applet() {
+    nm-applet --indicator &
+}
+
 main() {
     prep-ghostty
     fix-app-startup
+    run-nm-applet
 }
 
 main "$@"
