@@ -151,3 +151,6 @@ bindsym $mod+Shift+f exec $filebrowser
 
 # Open VS Code
 bindsym $mod+Shift+v exec code
+
+# Lock screen
+bindsym $mod+Ctrl+l exec $lockscreen
