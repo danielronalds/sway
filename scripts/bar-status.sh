@@ -46,7 +46,7 @@ print_bar() {
 main() {
     while true; do
         print_bar
-        sleep 5
+        sleep 10
     done
 }
 
