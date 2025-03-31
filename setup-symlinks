@@ -5,12 +5,14 @@
 CONFIG_DIR=$HOME/.config
 DOTFILES_DIR=$(pwd)
 
+err() {
+    >&2 echo $1
+}
+
 # Ensures script is running in the dotfiles dir
 check_in_pwd() {
-    # Checking if setup-symlinks script is present, if so, we assume we're running in the dotfiles dir
-    local grepped_dir=$(ls $DOTFILES_DIR | grep "setup-symlinks")
-    if [ -z "$grepped_dir" ]; then
-        echo "script needs to be run from the root of the dotfiles repo!"
+    if [ ! -f "$DOTFILES_DIR/setup-symlinks" ]; then
+        err "script needs to be run from the root of the dotfiles repo"
         exit 1
     fi
 }
@@ -19,14 +21,18 @@ check_in_pwd() {
 setup_symlink() {
     local dir=$1
 
-    local grepped_dir=$(ls $DOTFILES_DIR | grep $dir)
-    if [ -z "grepped_dir" ]; then
-        echo "couldn't find $dir in dotfiles dir!" 
+    if [ ! -d "$DOTFILES_DIR/$dir" ]; then
+        err "couldn't find $dir in dotfiles dir, skipping symlink"
+        return
+    fi
+
+    if [ -d "$CONFIG_DIR/$dir" ]; then
+        err "$dir is already in $CONFIG_DIR, skipping symlink"
         return
     fi
 
     ln -sf "$DOTFILES_DIR/$dir" "$CONFIG_DIR"
-    echo "Symlinked $dir!"
+    echo "symlinked $dir"
 }
 
 main() {
