@@ -12,10 +12,15 @@ run-nm-applet() {
     nm-applet --indicator &
 }
 
+set-default-brightness() {
+    brightnessctl set 40%
+}
+
 main() {
     prep-ghostty
     fix-app-startup
     run-nm-applet
+    set-default-brightness
 }
 
 main "$@"
