@@ -17,4 +17,6 @@ set $uni_browser firefox -P Waikato
 
 set $filebrowser ghostty -e yazi
 
+set $notes emacs
+
 set $lockscreen swaylock -i $HOME/.config/sway/backgrounds/kaiks.JPG

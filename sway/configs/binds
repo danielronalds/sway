@@ -149,6 +149,9 @@ bindsym $mod+Ctrl+Shift+Return exec $uni_browser
 # Open Filebrowser
 bindsym $mod+Shift+f exec $filebrowser
 
+# Open Notes
+bindsym $mod+Shift+n exec $notes
+
 # Open VS Code
 bindsym $mod+Shift+v exec code
 
