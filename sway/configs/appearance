@@ -13,6 +13,9 @@ default_floating_border none
 # Setting Gaps
 gaps inner 10
 
+# Enabling vscode transparency
+for_window [app_id="code"] opacity 0.95
+
 # Configuring Bar
 bar {
     position bottom
