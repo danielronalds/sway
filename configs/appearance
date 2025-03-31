@@ -15,7 +15,7 @@ gaps inner 10
 
 # Configuring Bar
 bar {
-    position top
+    position bottom
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
