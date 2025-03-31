@@ -10,13 +10,12 @@ main() {
         battery_text=100
     fi
 
-    # FIXME: Not working
-    local charging= $(acpi | awk '{print $3}' | sed "s/,//")
+    local charging=$(acpi | awk '{print $3}' | sed "s/,//")
     if [ "$charging" == "Charging" ]; then
-        battery_text="$battery_text+"
+        charging_text=" CHARGING"
     fi
 
-    echo "[ BAT: $battery_text% ]"
+    echo "[ BAT: $battery_text%$charging_text ]"
 }
 
 main
