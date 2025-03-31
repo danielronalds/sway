@@ -10,7 +10,11 @@ output * bg $HOME/.config/sway/backgrounds/dark-background.jpg fill
 default_border none
 default_floating_border none
 
+client.focused #414868 #414868 #C0CAF5
+client.unfocused #24283B #24283B #C0CAF5
+
 # Setting Gaps
+gaps outer 10
 gaps inner 10
 
 # Enabling vscode transparency
