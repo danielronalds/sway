@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+#
+# Script to setup simlinks of config files in this repo into $HOME/.config
+
+CONFIG_DIR=$HOME/.config
+DOTFILES_DIR=$(pwd)
+
+# Ensures script is running in the dotfiles dir
+check_in_pwd() {
+    # Checking if setup-symlinks script is present, if so, we assume we're running in the dotfiles dir
+    local grepped_dir=$(ls $DOTFILES_DIR | grep "setup-symlinks")
+    if [ -z "$grepped_dir" ]; then
+        echo "script needs to be run from the root of the dotfiles repo!"
+        exit 1
+    fi
+}
+
+# Symlinks the passed file/dir to the config dir
+setup_symlink() {
+    local dir=$1
+
+    local grepped_dir=$(ls $DOTFILES_DIR | grep $dir)
+    if [ -z "grepped_dir" ]; then
+        echo "couldn't find $dir in dotfiles dir!" 
+        return
+    fi
+
+    ln -sf "$DOTFILES_DIR/$dir" "$CONFIG_DIR"
+    echo "Symlinked $dir!"
+}
+
+main() {
+    check_in_pwd
+
+    configs=( "sway" )
+
+    for config in ${configs[@]}; do
+        setup_symlink $config
+    done
+}
+
+main
