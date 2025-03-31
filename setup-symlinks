@@ -5,9 +5,13 @@
 CONFIG_DIR=$HOME/.config
 DOTFILES_DIR=$(pwd)
 
-err() {
-    >&2 echo $1
-}
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # No Color
+
+err() { printf "${RED}ERROR${NC} $@\n" >&2 ; }
+warn() { printf "${YELLOW}WARNING${NC} $@\n" >&2 ; }
 
 # Ensures script is running in the dotfiles dir
 check_in_pwd() {
@@ -27,12 +31,12 @@ setup_symlink() {
     fi
 
     if [ -d "$CONFIG_DIR/$dir" ]; then
-        err "$dir is already in $CONFIG_DIR, skipping symlink"
+        warn "$dir is already in $CONFIG_DIR, skipping symlink"
         return
     fi
 
     ln -sf "$DOTFILES_DIR/$dir" "$CONFIG_DIR"
-    echo "symlinked $dir"
+    printf "${GREEN}SUCCESS${NC} symlinked $dir\n"
 }
 
 main() {
