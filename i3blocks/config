@@ -6,19 +6,19 @@ min_width=100
 align=center
 interval=60
 
-# TODO: Make this update when signal recieved
 [volume]
 command=$HOME/.config/i3blocks/scripts/volume.sh
 min_width=100
 align=center
-interval=60
+interval=once
+signal=15
 
-# TODO: Make this update when signal recieved
 [brightness]
 command=$HOME/.config/i3blocks/scripts/brightness.sh
 min_width=100
 align=center
-interval=60
+interval=once
+signal=16
 
 [time]
 command=$HOME/.config/i3blocks/scripts/time.sh
