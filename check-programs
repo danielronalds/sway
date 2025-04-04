@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+main() {
+    local programs=(
+        "brightnessctl"
+        "code"
+        "emacs"
+        "firefox"
+        "ghostty"
+        "grim"
+        "i3blocks"
+        "pactl"
+        "slurp"
+        "swaylock"
+        "wl-copy"
+        "wmenu-run"
+        "yazi"
+    )
+
+    for program in ${programs[@]}; do
+        check_program_installed $program
+    done
+}
+
+check_program_installed() {
+    local program="$1"
+
+    if [ -x "$(command -v $program)" ]; then
+        printf "[${GREEN}✓${NC}] $program\n"
+    else
+        printf "[${RED}x${NC}] $program not installed\n"
+    fi
+}
+
+main "$@"
