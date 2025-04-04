@@ -10,7 +10,7 @@ set $right l
 # Setting applications
 set $term ghostty
 
-set $menu wmenu-run -N 24283B -n C0CAF5 -S 414868 -s C0CAF5
+set $menu wmenu-run -N 24283B -n C0CAF5 -S 414868 -s C0CAF5 -b -f "sans-serif monospace 12"
 
 set $browser firefox
 set $uni_browser firefox -P Waikato
