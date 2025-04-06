@@ -15,7 +15,7 @@ warn() { printf "${YELLOW}WARNING${NC} $@\n" >&2 ; }
 
 # Ensures script is running in the dotfiles dir
 check_in_pwd() {
-    if [ ! -f "$DOTFILES_DIR/setup-symlinks" ]; then
+    if [[ ! -f "$DOTFILES_DIR/setup-symlinks" ]]; then
         err "script needs to be run from the root of the dotfiles repo"
         exit 1
     fi
@@ -25,12 +25,12 @@ check_in_pwd() {
 setup_symlink() {
     local dir=$1
 
-    if [ ! -d "$DOTFILES_DIR/$dir" ]; then
+    if [[ ! -d "$DOTFILES_DIR/$dir" ]]; then
         err "couldn't find $dir in dotfiles dir, skipping symlink"
         return
     fi
 
-    if [ -d "$CONFIG_DIR/$dir" ]; then
+    if [[ -d "$CONFIG_DIR/$dir" ]]; then
         warn "$dir is already in $CONFIG_DIR, skipping symlink"
         return
     fi

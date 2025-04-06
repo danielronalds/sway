@@ -29,7 +29,7 @@ main() {
 check_program_installed() {
     local program="$1"
 
-    if [ -x "$(command -v $program)" ]; then
+    if [[ -x "$(command -v $program)" ]]; then
         printf "[${GREEN}✓${NC}] $program\n"
     else
         printf "[${RED}x${NC}] $program not installed\n"

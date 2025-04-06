@@ -8,7 +8,7 @@ main() {
     local battery_percentage=$(cat "$BATTERY/capacity")
 
     local charging=$(cat "$BATTERY/status")
-    if [ "$charging" == "Charging" ]; then
+    if [[ "$charging" == "Charging" ]]; then
         charging_text=" CHARGING"
     fi
 
