@@ -5,25 +5,11 @@ GREEN='\033[0;32m'
 NC='\033[0m' # No Color
 
 main() {
-    local programs=(
-        "brightnessctl"
-        "code"
-        "emacs"
-        "firefox"
-        "ghostty"
-        "grim"
-        "i3blocks"
-        "pactl"
-        "slurp"
-        "swaylock"
-        "wl-copy"
-        "wmenu-run"
-        "yazi"
-    )
+    local programs_file="programs.txt"
 
-    for program in ${programs[@]}; do
+    while read -r program; do
         check_program_installed $program
-    done
+    done < $programs_file
 }
 
 check_program_installed() {

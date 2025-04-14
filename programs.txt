@@ -1,0 +1,13 @@
+brightnessctl
+code
+emacs
+firefox
+ghostty
+grim
+i3blocks
+pactl
+slurp
+swaylock
+wl-copy
+wmenu-run
+yazi
