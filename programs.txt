@@ -6,6 +6,7 @@ ghostty
 grim
 i3blocks
 pactl
+pavucontrol
 slurp
 swaylock
 wl-copy
