@@ -42,7 +42,7 @@ setup_symlink() {
 main() {
     check_in_pwd
 
-    configs=( "sway" "ghostty" "i3blocks" )
+    configs=( "sway" "ghostty" "i3blocks" "tmux" )
 
     for config in ${configs[@]}; do
         setup_symlink $config
