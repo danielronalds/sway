@@ -9,6 +9,7 @@ pactl
 pavucontrol
 slurp
 swaylock
+tmux
 wl-copy
 wmenu-run
 yazi
