@@ -1,0 +1,32 @@
+{
+  "projectDir": ["Projects/", ".config/"],
+  "templates": [
+    {
+      "name": "Git",
+      "commands": [
+        "git init",
+        "git branch -m main"
+      ]
+    },
+    {
+      "name":"Go Project",
+      "commands":[
+        "go mod init github.com/danielronalds/$PROJMAN_PROJECT_NAME",
+        "git init",
+        "git branch -m main",
+        "git add .",
+        "git commit -m 'chore: go mod init'"
+      ]
+    },
+    {
+      "name":"Rust Project",
+      "commands": [
+        "cargo init --bin",
+        "cargo run",
+        "git branch -m main",
+        "git add .",
+        "git commit -m 'chore: cargo init --bin'"
+      ]
+    }
+  ]
+}
