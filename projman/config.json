@@ -19,6 +19,16 @@
       ]
     },
     {
+      "name": "GOTM Project",
+      "commands": [
+        "gotm init $PROJMAN_PROJECT_NAME",
+        "git init",
+        "git branch -m main",
+        "git add .",
+        "git commit -m 'chore: gotm init'"
+      ]
+    },
+    {
       "name":"Rust Project",
       "commands": [
         "cargo init --bin",
