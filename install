@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# Script to install my dotfiles via curl
+
+main() {
+    local projects_dir="$HOME/Projects"
+    local dotfiles_repo="$projects_dir/dotfiles"
+
+    if [[ -e "$dotfiles_repo" ]]; then
+        echo "dotfiles already present on the system"
+        exit 0
+    fi
+
+    mkdir -p $projects_dir
+
+    git clone \
+        "https://www.github.com/danielronalds/dotfiles.git" \
+        "$dotfiles_repo"
+
+    cd $dotfiles_repo
+
+    bash ./setup-symlinks
+}
+
+# Not passing args
+main
