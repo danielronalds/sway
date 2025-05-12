@@ -14,7 +14,7 @@ main() {
     mkdir -p $projects_dir
 
     git clone \
-        "https://www.github.com/danielronalds/dotfiles.git" \
+        "git@github.com:danielronalds/dotfiles.git" \
         "$dotfiles_repo"
 
     cd $dotfiles_repo
