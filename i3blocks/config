@@ -1,11 +1,5 @@
 separator=false
 
-[battery]
-command=$HOME/.config/i3blocks/scripts/battery.sh
-min_width=100
-align=center
-interval=60
-
 [volume]
 command=$HOME/.config/i3blocks/scripts/volume.sh
 min_width=100
@@ -19,6 +13,12 @@ min_width=100
 align=center
 interval=once
 signal=16
+
+[battery]
+command=$HOME/.config/i3blocks/scripts/battery.sh
+min_width=100
+align=center
+interval=60
 
 [time]
 command=$HOME/.config/i3blocks/scripts/time.sh
